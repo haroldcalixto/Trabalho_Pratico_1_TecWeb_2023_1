@@ -10,7 +10,7 @@ Disciplina: Tecnologias Web;
 
 Semestre: 2023.1;
 
-## Equipe: 
+# Equipe: 
 
 Aluno: Harold Calixto de Albuquerque - 499735;
 
