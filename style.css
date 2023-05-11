@@ -180,7 +180,7 @@ button:hover {
 .produtos_descricao {
     background-color: white;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
     grid-template-rows: 81vh;
     border-radius: 1px;
     margin-right: 10px;
@@ -189,19 +189,12 @@ button:hover {
 .descricao {
     color: #07133D;
     text-align: justify;
-    margin-bottom: 100px;
 }
 
 .produtos { 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-    " tenis camisa_m camisa_f calca_d"
-    " comprar comprar comprar comprar"
-    " tornozeleira rolo_abdominal suplemento "
-    " comprar comprar comprar"
-    ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     max-width: 15px;
     margin-left: -30px;
     align-items: center;
@@ -215,8 +208,8 @@ button:hover {
     margin-right: 30px;
     margin-bottom: 10px;
     margin-top: 15px;
-    width: 160px;
-    height: 200px;
+    width: 130px;
+    height: 150px;
 }
 
 
@@ -224,10 +217,9 @@ button:hover {
     background-color: green;
     color: white;
     border: none;
-    width: 160px;
+    width: 120px;
     margin-left: 30px;
-    margin-top: 20px;
-    padding: 10px 20px;
+    height: 30px;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
@@ -238,6 +230,13 @@ button:hover {
     transform: scale(1.1);
 }
 
+.produto_comprar{
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: 
+    "image_produtos"
+    "comprar";
+}
 .navegacao {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
@@ -254,7 +253,7 @@ button:hover {
 
 .compartilhar {
     background-color: white; 
-    margin-top: 20px;
+    margin-top: 30px;
     color: blue; 
     border: 1px solid blue; 
     border-radius: 5px; 
@@ -430,7 +429,7 @@ input[type="submit"]:hover {
 }
 
 
-
+/* Estilização do Footer*/
 .footer_grid {
     background-color:#07133D;
     display:flex;
@@ -471,341 +470,333 @@ input[type="submit"]:hover {
 }
 
 /*Estilização da Responsividade*/
+ @media(max-width:767px){
 
- @media(min-width: 320px) and (max-width:767px){
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    
+    h1, h2, h3, p {
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    p {
+        font-size: 16px;
+    }
+    
+    .text_darkblue {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    
+    .text_white {
+        text-align: center;
+        margin: 0;
+        padding: 10px;
+        color: #fff;
+    }
+    
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+    
+    .inicio {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+        "logo"
+        "titulo"
+        "linguagem";
+        justify-items: center;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    .logo {
+        width: 80px;
+        height: 80px;
+        margin: 0;
+        grid-area: logo;
+    }
+    
+    .logo:hover {
+        transform: scale(1.1);
+    }
+    
+    .titulo {
+        color: #07133D;
+        font-size: 12px;
+        grid-area: titulo;
+    }
+    
+    .linguagem {
+        margin: 0;
+        grid-area: linguagem;
+    }
+    
+    button {
+        font-size: 14px;
+        margin-top: 5px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        border: none;
+    }
+    
+    button:hover {
+        transform: scale(1.1);
+    }
+    
+    .rotas {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        background-color: #07133D;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .botao {
+        margin-left: 0;
+        padding: 5px;
+        margin-top: 10px;
+    }
+    
+    .botao:hover {
+        background-color: #fff;
+        transform: scale(1.1);
+    }
+    
+    .paginas {
+        font-size: 1.1rem;
+    }
+    
+    .paginas:hover {
+        color: #07133D;
+    }
+    
+    .box-pesquisar {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 120px;
+    }
+    
+    .grid_banner {
+        display: none;
+    }
+    
+    .area_principal {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "navegacao"
+        "produtos";
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+    
+    .produtos_descricao {
+        background-color: white;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: auto;
+        border-radius: 1px;
+        margin-right: 0px;
+        margin-left: 10px;
+    }
+    
+    .descricao {
+        color: #07133D;
+        text-align: justify;
+        margin-bottom: 50px;
+    }
+    
+    .produtos {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        max-width: 100%;
+        margin-left: 0px;
+        align-items: center;
+        margin-right: 0px;
+        height: auto;
+    }
+    
+    .image_produtos {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        margin-top: 15px;
+        width: 50%;
+        height: auto;
+    }
+    
+    .comprar {
+        background-color: green;
+        color: white;
+        border: none;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .comprar:hover {
+        transform: none;
+    }
+    
+    .navegacao {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        background-color: #07133D;
+        margin-left: 0px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .video {
+        top: 0;
+    }
+    
+    .compartilhar {
+        background-color: white;
+        margin-top: 20px;
+        color: blue;
+        border: 1px solid blue;
+        border-radius: 5px;
+        padding: 10px 20px;
+    }
+    
+    .compartilhar:hover {
+        background-color: blue;
+        color: white;
+    }
+    
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        font-family: sans-serif;
+    }
 
-        body{
-          margin: 0;
-          padding: 0;
-        }
-      
-        h1, h2, h3, p {
-          font-family: 'Roboto', sans-serif;
-        }
-      
-        p {
-          font-size: 16px;
-        }
-      
-        .text_darkblue {
-          font-size: 18px;
-          margin-bottom: 10px;
-        }
-      
-        .text_white {
-          text-align: center;
-          margin: 0;
-          padding: 10px;
-          color: #fff;
-        }
-      
-        header {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          background-color: white;
-        }
-      
-        .inicio {
-          display: grid;
-          grid-template-columns: 1fr;
-          grid-template-rows: repeat(3, auto);
-          grid-template-areas:
-            "logo"
-            "titulo"
-            "linguagem";
-          justify-items: center;
-          align-items: center;
-          padding: 10px;
-        }
-      
-        .logo {
-          width: 80px;
-          height: 80px;
-          margin: 0;
-          grid-area: logo;
-        }
-      
-        .logo:hover {
-          transform: scale(1.1);
-        }
-      
-        .titulo {
-          color: #07133D;
-          font-size: 12px;
-          grid-area: titulo;
-        }
-      
-        .linguagem {
-          margin: 0;
-          grid-area: linguagem;
-        }
-      
-        button {
-          font-size: 14px;
-          margin-top: 5px;
-          padding: 5px 10px;
-          border-radius: 10px;
-          border: none;
-        }
-      
-        button:hover {
-          transform: scale(1.1);
-        }
-      
-        .rotas {
-          margin-top: 20px;
-          margin-bottom: 10px;
-          background-color: #07133D;
-          padding: 10px;
-          border-radius: 5px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-      
-        .botao {
-          margin-left: 0;
-          padding: 5px;
-          margin-top: 10px;
-        }
-      
-        .botao:hover {
-          background-color: #fff;
-          transform: scale(1.1);
-        }
-      
-        .paginas {
-          font-size: 1.1rem;
-        }
-      
-        .paginas:hover {
-          color: #07133D;
-        }
-      
-        .box-pesquisar {
-          margin-left: 0;
-          margin-top: 10px;
-          width: 120px;
-        }
-      
-        .grid_banner {
-          display: none;
-        }
-      
-        .area_principal {
-          display: grid;
-          grid-template-columns: 1fr;
-          grid-template-rows: auto;
-          grid-template-areas:
-            "navegacao"
-            "produtos";
-          margin-top: 20px;
-          margin-bottom: 50px;
-        }
-      
-        .produtos_descricao {
-            background-color: white;
-            display: grid;
-            grid-template-rows: 1fr 1fr;
-            grid-template-columns: auto;
-            border-radius: 1px;
-            margin-right: 0px;
-            margin-left: 10px;
+    .image_promocao {
+        height: 30px;
+        border-radius: 10px;
         }
         
-        .descricao {
-            color: #07133D;
-            text-align: justify;
-            margin-bottom: 50px;
-        }
-        
-        .produtos {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto auto auto auto auto auto auto auto auto;
-            grid-template-areas:
-            "tenis"
-            "camisa_m"
-            "camisa_f"
-            "calca_d"
-            "tornozeleira"
-            "rolo_abdominal"
-            "suplemento"
-            "fita";
-            max-width: 100%;
-            margin-left: 0px;
-            align-items: center;
-            margin-right: 0px;
-            height: auto;
-        }
-        
-        .image_produtos {
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 10px;
-            margin-top: 15px;
-            width: 50%;
-            height: auto;
-        }
-        
-        .comprar {
-            background-color: green;
-            color: white;
-            border: none;
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-        }
-        
-        .comprar:hover {
-            transform: none;
-        }
-        
-        .navegacao {
-            display: grid;
-            grid-template-rows: 1fr 1fr 1fr;
-            background-color: #07133D;
-            margin-left: 0px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .video {
-            top: 0;
-        }
-        
-        .compartilhar {
-            background-color: white;
-            margin-top: 20px;
-            color: blue;
-            border: 1px solid blue;
-            border-radius: 5px;
-            padding: 10px 20px;
-        }
-        
-        .compartilhar:hover {
-            background-color: blue;
-            color: white;
-        }
-        
-        a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
-            font-family: sans-serif;
-        }
+    .produtos_carrossel {
+        margin-top: 5px;
+    }
+    
+    .formulario_grid {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    
+    .formulario_texto {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    
+    form {
+        max-width: 300px;
+        margin-left: 20px;
+        padding: 10px;
+    }
+    
+    .h2-form {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    
+    input[type="submit"] {
+        margin-left: 20px;
+        font-size: 16px;
+        padding: 8px 16px;
+        border-radius: 3px;
+    }
+    
+    .avaliacoes{
+        margin-top: 5vh ;
+        margin-bottom: 5vh;
+    }
+    
+    .conteiner1{
+        margin-top: 5vh ;
+        margin-bottom: 5vh;
+        padding: 2vh;
+    }
+    
+    .conteiner2{
+        flex-direction: column;
+        margin-top: 2vh;
+        padding: 2vh;
+    }
+    
+    .usuario{
+        font-size: 16px;
+    }
+    
+    .texto{
+        font-size: 3vmax;
+    }
+    
+    .mais-avaliacao{
+        font-size: 2vh;
+    }
 
-        .image_promocao {
-            height: 30px;
-            border-radius: 10px;
-            }
-            
-        .produtos_carrossel {
-            margin-top: 5px;
+    .footer_grid {
+        display: block;
+        border-radius: 0;
         }
         
-        .formulario_grid {
-            display: flex;
-            flex-direction: column;
-            margin-top: 10px;
-        }
-        
-        .formulario_texto {
-            margin-left: 20px;
-            margin-top: 20px;
-        }
-        
-        form {
-            max-width: 300px;
-            margin-left: 20px;
-            padding: 10px;
-        }
-        
-        .h2-form {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-        
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 5px;
-            margin-bottom: 10px;
-        }
-        
-        input[type="submit"] {
-            margin-left: 20px;
-            font-size: 16px;
-            padding: 8px 16px;
-            border-radius: 3px;
-        }
-        
-        .avaliacoes{
-            margin-top: 5vh ;
-            margin-bottom: 5vh;
-        }
-        
-        .conteiner1{
-            margin-top: 5vh ;
-            margin-bottom: 5vh;
-            padding: 2vh;
-        }
-        
-        .conteiner2{
-            flex-direction: column;
-            margin-top: 2vh;
-            padding: 2vh;
-        }
-        
-        .usuario{
-            font-size: 16px;
-        }
-        
-        .texto{
-            font-size: 3vmax;
-        }
-        
-        .mais-avaliacao{
-            font-size: 2vh;
-        }
-        
-        .footer_grid {
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-        
-        .footer-informacoes{
-            margin-left: 5vh;
-            padding-bottom: 1vh;
-            padding-top: 2vh;
-        }
-        
-        .p-info {
-            font-size: 10px;
-        }
-        
-        .logo_footer {
-            width: 100px;
-            height: 100px;
-            margin-left: -10px;
-        }
-        
-        .p-nomes{
-            font-size: 14px;
-        }
-        
-        .email, .instagram, .whatssapp, .twitter, .google-maps {
-            font-size: 14px;
-        }
+    .footer-informacoes{
+        margin-left: 0;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        text-align: center;
+    }
+    
+    .p-info {
+        font-size: 16px;
+    }
+    
+    .logo_footer {
+        width: 100px;
+        height: 100px;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    
+    .p-nomes{
+        font-size: 16px;
+    }
+    
+    .email, .instagram, .whatssapp, .twitter, .google-maps {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
 }
-        
